@@ -1,5 +1,16 @@
 #include <pthread.h>
 
+/********************************************************************
+    S   T   A   T   I   O   N   -   S   T   R   U   C   T
+    @param
+    lock -> mutex to enforce matual exclusion.
+    launchOnBoard, trainArrived -> to ensure train is arrived
+    and passengers are boarded.
+    waitingRobots -> # of passengers waiting at station
+    leavingRobots -> # of passengers boarded and leaving in a train.
+    emptySeats -> capacity of the train.
+********************************************************************/
+
 struct station
 {
     pthread_mutex_t lock;
