@@ -39,7 +39,7 @@ void station_on_board(struct station *station)
 {
     pthread_mutex_lock(&(station->lock));
     if(station->leavingRobots--)
-        pthread_cond_signal(&(station->launchOnBoard));
+        pthread_cond_broadcast(&(station->launchOnBoard));
         /** Now, you can leave, Bye Bye */
     pthread_mutex_unlock(&(station->lock));
 }
